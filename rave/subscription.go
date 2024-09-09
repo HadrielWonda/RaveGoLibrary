@@ -8,7 +8,10 @@ type Subscription struct {
 	Rave
 }
 
-func (s Subscription) List() (error error, response map[string]interface{}) {
+func (s Subscription) List() (
+	error error,
+	response map[string]interface{},
+) {
 	queryParam := map[string]string{
 		"seckey": s.GetSecretKey(),
 	}
@@ -20,7 +23,10 @@ func (s Subscription) List() (error error, response map[string]interface{}) {
 	return nil, response
 }
 
-func (s Subscription) Fetch(id string) (error error, response map[string]interface{}) {
+func (s Subscription) Fetch(id string) (
+	error error,
+	response map[string]interface{},
+) {
 	queryParam := map[string]string{
 		"seckey": s.GetSecretKey(),
 		"id":     id,
@@ -33,7 +39,10 @@ func (s Subscription) Fetch(id string) (error error, response map[string]interfa
 	return nil, response
 }
 
-func (s Subscription) Cancel(id int) (error error, response map[string]interface{}) {
+func (s Subscription) Cancel(id int) (
+	error error,
+	response map[string]interface{},
+) {
 	paymentData := struct {
 		Seckey string `json:"seckey"`
 	}{
@@ -50,7 +59,10 @@ func (s Subscription) Cancel(id int) (error error, response map[string]interface
 	return nil, response
 }
 
-func (s Subscription) Activate(id int) (error error, response map[string]interface{}) {
+func (s Subscription) Activate(id int) (
+	error error,
+	response map[string]interface{},
+) {
 	paymentData := struct {
 		Seckey string `json:"seckey"`
 	}{
