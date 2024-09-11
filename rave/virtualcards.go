@@ -10,15 +10,24 @@ import (
 ///</summary>
 
 type Create interface {
-	Create(data CreateData) (error error, response map[string]interface{})
+	Create(data CreateData) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type List interface {
-	List(data List) (error error, response map[string]interface{})
+	List(data List) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type Get interface {
-	Get(data string) (error error, response map[string]interface{})
+	Get(data string) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 // type Terminate interface {
@@ -26,18 +35,30 @@ type Get interface {
 // }
 
 type Fund interface {
-	Fund(data string) (error error, response map[string]interface{})
+	Fund(data string) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type Fetch interface {
-	Fetch(data string) (error error, response map[string]interface{})
+	Fetch(data string) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type Withdraw interface {
-	Withdraw(data string) (error error, response map[string]interface{})
+	Withdraw(data string) (
+		error error,
+		response map[string]interface{},
+	)
 }
 type Freeze interface {
-	Freeze(data string) (error error, response map[string]interface{})
+	Freeze(data string) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type Virtualcard interface {

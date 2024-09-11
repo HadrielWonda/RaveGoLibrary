@@ -33,7 +33,7 @@ type ServicepayData struct {
 	SendOTPasCustomer bool             `json:"send_otp_to_customer"`
 	CustomerInfo      CustomerInfoData `json:"customer_info"`
 	Medium            []string         `json:"medium"`
-	TransactionRef       string              `json:"transaction_reference"`
+	TransactionRef  string             `json:"transaction_reference"`
 }
 
 type OTPData struct {
@@ -45,7 +45,7 @@ type OTPData struct {
 	Seckey             string         `json:"secret_key"`
 	OtpExpiresInMins   int            `json:"otp_expires_in_minutes"`
 	SenderBusinessname string         `json:"sender_business_name"`
-	SenderSameOTP      bool        `json:"send_same_otp"`
+	SenderSameOTP      bool           `json:"send_same_otp"`
 	SenderAsIs         int            `json:"send_as_is"`
 }
 
@@ -53,7 +53,10 @@ type FlutterwaveOTP struct {
 	Rave
 }
 
-func (o FlutterwaveOTP) Otp(data OTPData) (error error, response map[string]interface{}) {
+func (o FlutterwaveOTP) Otp(data OTPData) (
+	error error,
+	response map[string]interface{},
+) {
 	data.Seckey = o.GetSecretKey()
 	url := o.GetBaseURL() + o.GetEndpoint("flutterwaveOTP", "otp")
 	err, response := MakePostRequest(data, url)
