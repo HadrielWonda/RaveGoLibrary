@@ -36,4 +36,4 @@
 - [ ] My branch follows the naming convention `bug-<issue#>-<description>` or `feature-<issue#>-<description>`
 
 
-@Flutterwave/Corvus97 What do you think about these updates?
+
