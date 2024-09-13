@@ -1,19 +1,31 @@
 package rave
 
 type PreauthCharge interface {
-	ChargePreauth(data TokenizedChargeData) (error error, response map[string]interface{})
+	ChargePreauth(data TokenizedChargeData) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type PreauthVerify interface {
-	VerifyPreauth(data CardVerifyData) (error error, response map[string]interface{})
+	VerifyPreauth(data CardVerifyData) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type PreauthCapture interface {
-	CapturePreauth(data CardValidateData) (error error, response map[string]interface{})
+	CapturePreauth(data CardValidateData) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type PreauthRefundOrVoid interface {
-	RefundOrVoidPreauth(data CardVerifyData) (error error, response map[string]interface{})
+	RefundOrVoidPreauth(data CardVerifyData) (
+		error error,
+		response map[string]interface{},
+	)
 }
 
 type PreauthInterface interface {

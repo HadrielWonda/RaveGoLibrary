@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
+	//"io/ioutil"
 	"log"
 	"net/http"
 	"time"
@@ -79,7 +79,7 @@ type jsonResp struct {
 
 func (r *Rave) decodeResponse(httpResp *http.Response, v any) error {
 	var resp jsonResp
-	respBody, err := ioutil.ReadAll(httpResp.Body)
+	respBody, err := io.ReadAll(httpResp.Body)
 	if err != nil {
 		return err
 	}
